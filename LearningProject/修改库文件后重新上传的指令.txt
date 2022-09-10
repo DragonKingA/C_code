@@ -1,0 +1,4 @@
+打开git bash here,依次输入以下指令：
+git add 文件名.文件后缀名
+git commit -m "(说明，不能为空)"
+git push
