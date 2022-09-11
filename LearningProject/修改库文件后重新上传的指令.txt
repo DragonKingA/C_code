@@ -2,3 +2,5 @@
 git add 文件名.文件后缀名
 git commit -m "(说明，不能为空)"
 git push
+
+注意：可以分别将所有要上传的文件add，再统一进行后续commit和push操作，这样实现批量上传
