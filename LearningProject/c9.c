@@ -2,7 +2,7 @@
 void main(){
 
     //求一系列数的平均数
-    int num,sum=0,times=0;
+    int num,sum=-1,times=0;
     printf("请输入一系列正整数，若输入-1即为停止输入:\n");
     scanf("%d",&num);
     while(num != -1){    
@@ -11,6 +11,7 @@ void main(){
         scanf("%d",&num);
     }
     if(sum != -1){
+        sum++;//补值
         printf("平均数为%f",1.0*sum/times);
         //***这里用1.0去乘以sum使其结果为浮点值
         //同于java，double average = sum/times
