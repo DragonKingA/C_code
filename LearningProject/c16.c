@@ -41,3 +41,40 @@ Back:
         goto Back;
     }
 }
+/*
+输入：
+第一行输入参数T，表示有T个测试实例
+第二行输入参数n，表示这一组青蛙的数量，第三行输入n个青蛙的体重
+以此类推
+
+输出：
+输出每一组青蛙中，超出平均体重的青蛙数量。
+*/
+    //   int T;
+    //   scanf("%d",&T);
+    //   while(T--){
+	//       int num,sum=0,times=0,count,countOW=0;
+	//       scanf("%d",&count);
+	//       if(count>0){
+	//           int numset[count];
+	//           while(times < count){
+	//               scanf("%d",&num);
+	//               numset[times]=num;    
+	//               sum += num;
+	//               times++;
+	//           }
+	         
+	        
+	          
+	//         double average = 1.0*sum/count;           
+	// 		//printf("average=%f,sum=%d",average,sum);
+	//         for(int i = 0;i<count;i++){
+	//           if(numset[i]>average){
+	//             countOW++;
+	//           }
+	//         }
+	//         printf("%d\n",countOW);
+	//         countOW=0;
+	//     }
+    // }
+   
