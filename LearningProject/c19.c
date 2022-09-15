@@ -17,6 +17,22 @@ int WINAPI WinMain(
     MB_OKCANCEL);
     return 0;
 }
+
+返回值：如果没有足够的内存来创建消息框，则返回值为零。如果函数调用成功，则返回值为下列对话框返回的菜单项目值中的一个：
+　　IDABORT：Abort 按钮被选中。IDCANCEL：Cancel按钮被选中。IDIGNORE：Ignore按钮被选中。
+　　IDNO：NO按钮被选中。IDOK：OK按钮被选中。IDRETRY：RETRY按钮被选中。
+　　IDYES：YES按钮被选中。
+　　如果一个消息框有一个Cancel按钮，且如果Esc键被按下或Cancel键被选择，则函数返回IDCANCEL值。如果消息框没有Cancel按钮，则按Esc键没有作用。
+MessageBox的返回值宏有：
+#define IDOK                      1
+#define IDCANCEL                  2
+#define IDABORT                   3
+#define IDRETRY                   4
+#define IDIGNORE                  5
+#define IDYES                     6
+#define IDNO                      7
+
+
 */
 
 LRESULT CALLBACK WndProc(HWND,UINT,WPARAM,LPARAM);
@@ -84,13 +100,13 @@ int WINAPI WinMain(
     //显示窗口
     ShowWindow(hwnd,iCmdShow);
 
-    //绘制（更新）窗口
+    //更新窗口：UpdateWindow()会更新指定窗口的客户区
     UpdateWindow(hwnd);
 
     //第三步：消息循环===================================================================================================
 
     while(GetMessage(&msg,NULL,0,0)){
-        TranslateMessage(&msg);//翻译消息
+        TranslateMessage(&msg);//翻译消息:将虚拟键消息转换为字符消息
         DispatchMessage(&msg);//分派消息
     }
 
@@ -119,8 +135,8 @@ LRESULT CALLBACK WndProc(
         DrawText(
             hdc,
             TEXT("第一个窗口程序"),//TEXT()函数会返回ANSI string
-            -1,
-            &rect,
+            -1,//填入指向字符串中的字符数。如果nCount为-1，则lpString指向的字符串被认为是以\0结束的，DrawText会自动计算字符数。
+            &rect,//填入指向结构RECT的指针，其中包含文本将被置于其中的矩形的信息（按逻辑坐标）
             DT_SINGLELINE | DT_CENTER | DT_VCENTER
         );
         EndPaint(hwnd,&ps);//终止绘制
@@ -139,7 +155,7 @@ LRESULT CALLBACK WndProc(
 //至此 窗口程序 已经完善
 //出现编译错误情况，在左侧.vscode中修改tasks.json
 //在"args"下加入"-mwindows"即可
-
+//或编译时应当输入gcc c19.c -mwindows或gcc c19.c -o a -mwindows
 
 
 
