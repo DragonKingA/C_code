@@ -24,6 +24,7 @@ void main(){
     }
 
     //对一升序数组，用二分搜索法搜索一个数
+    //二分法效率高，对于数字num，最大搜索次数为log2(num),若num=1000，则最多搜索10次
     int index_min,index_max,index_mid;
     int num;//要搜索的数
     printf("请输入要搜索的数：");
