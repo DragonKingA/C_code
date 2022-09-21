@@ -121,4 +121,50 @@ void main(){
     p是一个可以变化的指针变量，而a是一个常数，
     因为数组一但被说明，数组的地址也就确定下来了。因此a是不能变化的，而p可以。
 */
+
+
+    char char0 = '1';
+    //scanf("%c",&char0);
+    printf("char0%%d=%d\n",char0);//49,数字1的ASCII码为49
+    printf("char0%%c=%c\n",char0);//1    
+        
+    char char1 = 1;
+    //scanf("%c",&char1);
+    printf("char1%%d=%d\n",char1);//1
+    printf("char1%%c=%c\n",char1);//不输出任何东西
+
+    char0 = char1;
+    printf("char0%%d=%d\n",char0);//1
+    printf("char0%%c=%c\n",char0);//不输出任何东西
+
+    int charint = '1';//char类型数据的本质是int
+    printf("charint = %d\n",charint);//1
+
+    // char char2;
+    // int charint2;
+    // scanf("%d%c",charint2,char2);
+    // printf("%d %c",charint2,char2);
+    //上述代码虽然编译能够通过，但执行到scanf之后就会运行终止，所以不能同时%d%c并在一起使用
+    char Achar = 'A';
+    char achar = 'a';
+    char char2 = Achar+('a'-'A');
+    char char3 = achar+('A'-'a');   
+    printf("'a'-'A'=%d\n",'a'-'A'); //32
+    printf("A +'a'-'A'=%c\n",char2);//a
+    printf("a +'A'-'a'=%c\n",char3);//A
+    //'a'-'A'代表两字符间的距离
+    // Achar + 'a'-'A' 可以将大写字母A变成小写字母
+    // achar + 'A'-'a' 可以将小写字母a变成大学字母
+
+    // "/"逃逸字符，后跟一种字符可以使其能以字符串输出,如\"使其输出一个引号
+    //或者产生特殊意义的操作如\n
+    printf("\\ \" \' \n");
+
+
+
+
+
+
+
+
 }

@@ -10,6 +10,11 @@ int main(){
     //2.若除以2.0，则右侧表达式输出结果
     printf("%d和%d的平均值为%f\n",num1,num2,numAverage);
 
+    //int类型数据范围在-2^15 ~ 2^15 - 1
+    long long int num4 = 1000;//long long int == long long，后者只是前者的简写
+    long long num3 = 10000000000;//long long类型在C++11后新加入，空间占8个字节，可以定义整数范围在-2^31 ~ 2^31 - 1
+    printf("long long num3=%lld\n",num3);//long long类型使用%lld(有符号型)或%llu(无符号型) ,而java没有long long int类型
+    
 
     printf("请分别输入身高的英尺和英寸,""如输入\"5 7\"表示5英尺7英寸：");
     double foot;//double双精度浮点数，float单精度浮点数
